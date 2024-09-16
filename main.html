@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass Technology</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+   
+</head>
+<body>
+  <!-- NAvigation BAr -->
+    
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <div class="nav-content">
+          <div class="logo">
+            <a href="#"><img src="img/logo.png" alt=""></a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="#course">Courses</a></li>
+            <li><a href="#client">Clients</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonial">Testimonial</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Chatbot -->
+      <button class="chatbot-toggler">
+        <span class="fas fa-robot"></span>
+        <span class="fas fa-window-close"></span>
+      </button>
+      <div class="chatbot">
+        <header>
+          <h2>Chatbot</h2>
+          <span class="close-btn fas fa-window-close">close</span>
+        </header>
+        <form class="chat-form" onsubmit="sendEmail(); reset(); return false;">
+          <h3>Fill the form</h3>
+          <div class="chat-form-cont">
+          <label for="Name">Name:</label> &nbsp;&nbsp;
+          <input id="name" placeholder="Type your Full Name" type="text" required> <br>
+
+          <label for="email">Email:</label>
+          <input id="email" placeholder="Email" type="email"> <br>
+
+          <label for="numb">Number:</label>
+          <input id="numb" placeholder="Phone Number"> <br>
+          
+          <label for="address">Address:</label>
+          <input id="address" placeholder="Address"> <br>
+          <label for="course">Course:</label>
+          <select name="select" id="course" name="course"> &nbsp;&nbsp;
+            <option value="c">C</option>
+            <option value="Cpp">C++</option>
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+            <option value="angularJs">AngularJs</option>
+            <option value="javaFullStack">Java Full Stack</option>
+            <option value="androidDev">Android Application Development</option>
+            <option value="pythonFullStack">Python Full Stack</option>
+          </select><br>
+  
+          <div class="form-btn">
+          <button type="submit" name="submit">Submit</button>
+          </div>
+          </div>
+        </form> <br>
+        <ul class="chatbox vanish">
+          <li class="chat incoming">
+            <span class="fas fa-robot"></span>
+            <p>Hi there 👋<br>How can I help you today?</p>
+          </li>
+        </ul>
+        <div class="chat-input">
+          <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+          <span id="send-btn" class="fas fa-paper-plane"></span>
+        </div>
+      </div>
+
+      <!-- whatsapp -->
+      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-94ba077c-f5c9-4cc2-b270-61dafb6a6433" data-elfsight-app-lazy></div>
+    <!-- home slider -->
+      <!-- <section class="home" id="home" style="background-image: url(img/MAIN.jpeg);"> </section> -->
+        <div class="home-slideshow-container" id="home">
+        <!-- <hr style="border: 1.5px solid #575757;"> -->
+        <div class="home-mySlides home-fade home-img">
+          <img src="img/home1.jpg" style="width:100%; height:55vh; object-fit: cover;">
+        </div>
+        <div class="home-mySlides home-fade home-img">
+          <img src="img/home5.jpeg" style="width:100%; height:55vh;object-fit: cover">
+        </div>
+        <div class="home-mySlides home-fade home-img">
+          <img src="img/home1.jpg" style="width:100%; height:55vh;object-fit: cover">
+        </div>
+        <div class="home-mySlides home-fade home-img">
+          <img src="img/home6.jpg" style="width:100%; height:55vh;object-fit: cover">
+        </div>
+        <div class="home-mySlides home-fade home-img">
+          <img src="img/home7.jpg" style="width:100%; height:55vh;object-fit: cover">
+        </div>
+        <div class="home-mySlides home-fade home-img">
+          <img src="img/home8.jpg" style="width:100%; height:55vh;object-fit: cover">
+        </div>
+        
+        </div>
+        
+        
+        <div style="text-align:center; font-size:2px;">
+          <span class="home-dot"></span> 
+          <span class="home-dot"></span> 
+          <span class="home-dot"></span> 
+          <span class="home-dot"></span> 
+          <span class="home-dot"></span> 
+          <span class="home-dot"></span> 
+        </div>
+        <script>
+        let homeslideIndex = 0;
+        showSlidess();
+        
+        function showSlidess() {
+          let i;
+          let slidess = document.getElementsByClassName("home-mySlides");
+          let dotss = document.getElementsByClassName("home-dot");
+          for (i = 0; i < slidess.length; i++) {
+            slidess[i].style.display = "none";  
+          }
+          homeslideIndex++;
+          if (homeslideIndex > slidess.length) {homeslideIndex = 1}    
+          for (i = 0; i < dotss.length; i++) {
+            dotss[i].className = dotss[i].className.replace(" home-active", "");
+          }
+          slidess[homeslideIndex-1].style.display = "block";  
+          dotss[homeslideIndex-1].className += " home-active";
+          setTimeout(showSlidess,2000); 
+        }
+        </script>
+        
+<br>
+<br>
+<br>
+<section class="about" id="about"></section>
+<div class="about-card">
+    
+  <div class="about-card-content" data-aos="fade-right"  data-aos-offset="300" data-aos-duration="650"
+  data-aos-easing="ease-in-sine">
+    <h2>About Us</h2>
+    <h3>Transforming Challenges into a Solutions</h3> <br>
+    <p>
+    Mass Technologies is the total IT Solutions Company where we cater diverse services including Software Development, Web Development, Academic research Projects, Training (corporate and academics). We are the full service software development and  training organization specialized in hands on learning. We provide a wide variety of IT solutions and services to Institutions and
+     corporates.</p><p><br>Our focus is providing customers with reliable, leading edge technologies at very reasonable price.At Mass Technologies we specialize in more than just quality education delivering to the students. Our goal is to help students in getting good employability.
+        We are dedicated to guide the industry professionals and students to competently compete and confirm to international standards of quality, employee efficiency and productivity.
+        Training is delivered by highly core professional.
+        <br><br> We are having diverse field of software development on all leading technologies to give you a complete satisfaction
+        So Come and experience all this services @ MASS Technologies, Satisfaction is Guranteed.</p> <br>
+        <img src="img/about-us-1.jpg" alt="Card Image">
+
+  </div>
+  <img src="img/about-us-1.jpg"  data-aos="flip-left"
+  data-aos-easing="ease-out-cubic" data-aos-duration="1500" alt="Card Image">
+</div>
+</section> <br>
+
+
+  <section class="about-img" style="background-image:url(img/about.jpeg);">
+    <div class="stats" data-aos="fade-up"
+    data-aos-duration="750" data-aos-delay="500">
+        <div class="box">
+            <i class="fas fa-check-double" style="font-size:30px;"></i><br><br>
+            <p class="count" data-count="8000" style="font-size:xx-large; font-weight: 600;">0</p><br>
+            <p style="font-weight: 700;">PROJECTS COMPLETED</p><br>
+        </div>
+        <div class="box">
+            <i class="fas fa-user-graduate" style="font-size:30px;"></i><br><br>
+            <p class="count" data-count="25000" style="font-size:xx-large; font-weight: 600;">0</p><br>
+            <p style="font-weight: 700;">STUDENTS TRAINED</p><br>
+        </div>
+        <div class="box">
+            <i class="fas fa-user-tie" style="font-size:30px;"></i><br><br>
+            <p class="count" data-count="300" style="font-size:xx-large; font-weight: 600;">0</p><br>
+            <p style="font-weight: 700;">STUDENTS PLACED</p><br>
+        </div>
+        <div class="box">
+            <i class="	fas fa-clock" style="font-size:30px;"></i><br><br>
+            <p class="count1" data-count="20" style="font-size:xx-large; font-weight: 600;">20+</p><br>
+            <p style="font-weight: 700;">YEARS OF EXPERIENCE</p><br>
+        </div>
+    </div>
+        </section>
+        <script>
+          const myNum = document.querySelectorAll('.count')
+// console.log(myNum.innerText)
+
+ 
+let speed = 250;
+
+myNum.forEach( (myCount) => {
+    
+    
+    let target_count = myCount.dataset.count;
+    let init_count = +myCount.innerText;
+    // console.log(target_count)
+    
+    let new_increment_num = Math.floor(target_count / speed);
+    
+    const updateNumber = () => {
+        init_count +=  new_increment_num;
+        myCount.innerText = init_count;
+        
+        if(init_count < target_count){
+            setTimeout(() => {updateNumber()}, 5)
+        }
+    }
+    
+    updateNumber();
+    
+})
+        </script>
+   
+                                                <!-- SErvices -->
+
+        <section class="service" id="service"></section>
+        <div class="service-card" style="margin-top: 10%;">
+          <img src="img/ser.gif" data-aos="flip-right" data-aos-duration="1500" data-aos-easing="ease-out-cubic" data-aos-delay="500"  alt="Card Image">
+          <div class="service-card-content" data-aos="fade-left"  data-aos-offset="300" data-aos-duration="600"
+          data-aos-easing="ease-in-sine">
+            <h2>Our Services</h2>
+            <h3>Empowering Your Digital Journey with Cutting-Edge IT Services.</h3> <br>
+            <p>
+              Welcome to MASS Technologies, where innovation meets excellence in the realm of IT solutions. As a leading provider of 
+              cutting-edge technology services, we pride ourselves on delivering a comprehensive suite of solutions tailored 
+              to meet the evolving needs of businesses in the digital landscape.</p><p><br>Our diverse range of services encompasses everything from strategic IT consulting to 
+                seamless software development, ensuring that our clients are equipped with the tools and expertise needed to
+                 thrive in today's dynamic business environment. Whether you're seeking to optimize your IT infrastructure, 
+                 develop custom software solutions, or harness the power of emerging technologies, our team of skilled 
+                 professionals is committed to delivering results that exceed expectations.<br><br>
+                 At MASS Technologies, we understand that each business is unique, and our services are designed to be 
+                 scalable, flexible, and customized to suit your specific requirements. From software development and 
+                 training to data analytics and artificial intelligence, we leverage the latest technologies to drive
+                innovation and efficiency across your organization.Our client-centric approach prioritizes collaboration and
+                transparency, ensuring that you are actively involved in the decision-making process at every step. We believe
+                in building lasting partnerships with our clients, and our commitment to delivering quality, on-time solutions
+                 sets us apart in the competitive IT landscape </p> <br>
+                <img src="img/service-us-1.jpg" alt="Card Image">
+        
+          </div>
+          
+        </div>
+       <!-- option-2 services -->
+
+  <section class="service-1-img" style="background-image:url(img/footer-bg.jpg);"> 
+    <div class="service-container-1">
+      <div class="service-subcontain-1" data-aos="flip-down" data-aos-duration="300">
+        <a href="services.html">
+        <img src="img/services/icon/software_icon.png">
+        <div class="service-p">
+        <p>Software Development</p><br>
+        </div>
+      </a>
+       
+      </div>
+      <div class="service-subcontain-1" data-aos="flip-down" data-aos-duration="600"data-aos-delay="100">
+        <a>
+        <img src="img/services/icon/tech.jpg">
+        <div class="service-p">
+               <p>Training and Education</p><br>
+               </div>
+              </a>
+    </div>
+    
+    <div class="service-subcontain-1" data-aos="flip-down" data-aos-duration="900" data-aos-delay="200">
+      <a>
+      <img src="img/services/icon/te.png">
+      <div class="service-p">
+             <p>BE/ME/PHD Projects</p><br>
+             </div>
+            </a>
+  </div>
+  <div class="service-subcontain-1" data-aos="flip-down" data-aos-duration="1200" data-aos-delay="300">
+<a>
+    <img src="img/services/icon/web.png">
+    <div class="service-p">
+    <p >Web Development</p><br>
+    </div>
+  </a>
+</div>
+      
+  </div>
+
+<br><br> <br><br><br><br><br>
+
+</section>
+
+
+<!-- option1-services -->
+        <!-- <section class="service-img" style="background-image:url(img/service.jpeg);"> 
+          <div class="service-container">
+            <div class="service-subcontain">
+               <img src="img/services/icon/software_icon.png">
+                <p style="font-size:large; font-weight: 600; color: #ac030c;">Software Development</p><br>
+                <p style="color: white; font-weight:300; font-size:small; ">At MASS Technologies, we prioritize understanding your unique requirements, ensuring our software 
+                  aligns seamlessly with your business objectives. Our team of skilled developers, designers, and
+                   project managers collaborates to deliver cutting-edge solutions that empower your organization.</p><br>
+                   <a href="services.html">Read More</a>
+            </div>
+            <div class="service-subcontain">
+              <img src="img/services/icon/tech.jpg">
+               <p style="font-size:large; font-weight: 600; color: #ac030c;">Training and Education</p><br>
+               <p style="color: white; font-weight:300; font-size:small; ">Our Training and Education services cater to individuals and organizations seeking to stay at the
+                forefront of technology. We provide hands-on training sessions, workshops, and certification programs
+                 designed to equip participants with the latest skills and knowledge in the rapidly evolving IT landscape.</p><br>
+                  <a href="services.html">Read More</a>
+           </div>
+           <div class="service-subcontain">
+            <img src="img/services/icon/te.png">
+             <p style="font-size:large; font-weight: 600; color: #ac030c;">BE/ME/PHD Projects</p><br>
+             <p style="color: white; font-weight:300; font-size:small; ">Our IT Support and Helpdesk services are tailored to meet the diverse needs of businesses, from
+              troubleshooting technical issues to offering proactive solutions for optimal system performance. 
+              Our experienced support team is available to address queries, resolve challenges, and provide expert 
+              guidance.</p><br>
+                <a href="services.html">Read More</a>
+         </div>
+         <div class="service-subcontain">
+          <img src="img/services/icon/web.png">
+           <p style="font-size:large; font-weight: 600; color: #ac030c;">Web Development</p><br>
+           <p style="color: white; font-weight:300; font-size:small; ">Our BE/ME/PhD Projects service caters to students and researchers pursuing Bachelor's, Master's, or
+            Doctoral degrees, providing them with an opportunity to engage in cutting-edge projects across various
+             IT domains. We collaborate closely with educational institutions hands-on
+              projects that blend theoretical knowledge with practical application.</p><br>
+               <a href="services.html">Read More</a>
+       </div>
+        </div>
+  </section>
+  -->
+                                                 <!-- COurses section -->
+
+  <section class="course" id="course"></section>
+  <div class="course-card">
+    
+    <div class="course-card-content" data-aos="fade-right"  data-aos-offset="300" data-aos-duration="600"
+    data-aos-easing="ease-in-sine">
+      <h2>Courses</h2>
+      <h3>Elevate Your Expertise: Unleashing the Power of Knowledge in Our IT Learning Hub.</h3> <br>
+      <p>
+        Welcome to MASS Technologies, your gateway to a world of learning and growth. Our diverse range of
+courses offered by our IT solution company is meticulously curated to empower individuals and organizations 
+with the skills and knowledge needed in today's dynamic tech landscape.</p><p><br>At MASS Technologies, we pride ourselves on delivering high-quality, industry-relevant courses
+spanning a broad spectrum of IT disciplines. From programming languages and web development to cybersecurity,
+ data analytics, and emerging technologies, our courses are designed to cater to learners at various skill levels
+  – from beginners to advanced professionals.<br><br>
+  Embark on a journey of knowledge and skill acquisition with MASS Technologies. Explore our comprehensive course 
+  offerings, and let us be your guide to success in the ever-evolving world of technology. Elevate your skills, 
+  empower your career, and stay ahead with our transformative IT courses.</p> <br>
+          <img src="img/course-11.jpg" alt="Card Image">
+  
+    </div>
+    <img src="img/course-11.jpg" data-aos="flip-left" data-aos-duration="1500" data-aos-easing="ease-out-cubic" data-aos-delay="100" alt="Card Image">
+  </div>
+</section>
+
+<section class="course-offered">
+  <div class="text">
+    <br>
+<p><h5>Courses Offered</h5>
+  </p>
+  
+  <div class="course-container">
+    <div class="course-box" data-aos="fade-right" data-aos-duration="1000">
+        <a href="c.html">
+        <img src="img/courses/icon/c.png">
+        <div>
+            <p>C Programming</p>
+        </div>
+        </a>
+    </div>
+    <div class="course-box" data-aos="fade-right" data-aos-duration="1000">
+        <a href="c++.html">
+        <img src="img/courses/icon/c++.png">
+        <div>
+            <p style="font-size: 20px;">C++ Programming</p>
+        </div>
+        </a>
+    </div>
+    <div class="course-box" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+        <a href="java.html">
+        <img src="img/courses/icon/java.png">
+        <div>
+            <p>Java Programming</p>
+        </div>
+        </a>
+    </div>
+    <div class="course-box" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+        <a href="python.html">
+        <img src="img/courses/icon/python.png">
+        <div>
+            <p>Python Programming</p>
+        </div>
+        </a>
+    </div>
+  </div>
+  <div class="course-container">
+    <div class="course-box" data-aos="fade-right" data-aos-duration="1000">
+        <a href="angular.html">
+        <img src="img/courses/icon/angular.png" style="width: 90px;">
+        <div>
+            <p>AngularJs</p>
+        </div>
+        </a>
+    </div>
+    <div class="course-box" data-aos="fade-right" data-aos-duration="1000">
+        <a href="android.html">
+        <img src="img/courses/icon/android.png">
+        <div>
+            <p style="font-size: 15px;">Android Application Development</p>
+        </div>
+        </a>
+    </div>
+    <div class="course-box" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+        <a href="pythonFull.html">
+        <img src="img/courses/icon/python.png">
+        <div>
+            <p>Python Fullstack</p>
+        </div>
+        </a>
+    </div>
+    <div class="course-box" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+        <a href="javaFull.html">
+        <img src="img/courses/icon/java.png">
+        <div>
+            <p>Java Fullstack</p>
+        </div>
+        </a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- <section class="course-img" style="background-image:url(img/course.jpeg);">
+</section> -->
+
+
+<!-- Clients -->
+
+<section class="client" id="client"></section>
+<div class="client-card">
+  <img src="img/client-cont.jpg" data-aos="flip-right" data-aos-duration="1500" data-aos-easing="ease-out-cubic" data-aos-delay="100" alt="Card Image">
+  <div class="client-card-content" data-aos="fade-left"  data-aos-offset="300" data-aos-duration="700"
+  data-aos-easing="ease-in-sine">
+    <h2>Clients</h2>
+    <h3>Empowering Success Stories: Nurturing Long-Term Partnerships in the Digital Frontier</h3> <br>
+    <p>
+      Our success at MASS Technologies is intricately woven with the achievements and growth of our valued clients. 
+      As a trusted partner in the dynamic world of technology solutions, we take immense pride in the diverse range of businesses and
+       industries we have had the privilege to collaborate with.</p><p><br>Our clients are more than just business relationships; they are strategic alliances built on a foundation of 
+        trust, transparency, and shared goals. From startups with ambitious visions to established enterprises seeking digital transformation, 
+        our clientele spans a spectrum of industries. We have successfully provided tailored IT solutions that not only meet but exceed the
+         unique challenges and aspirations of each client.<br><br>
+         What sets us apart is our unwavering commitment to understanding the intricacies of our clients' operations, 
+         aligning our expertise with their goals, and delivering solutions that drive tangible results. Through close collaboration, 
+         we have witnessed businesses elevate their efficiency, scale operations, and innovate in ways that redefine success in the digital age. <br> <br>
+         At MASS Technologies, our clients are at the heart of what we do. Their success stories inspire us to continuously push
+          boundaries, explore new technologies, and evolve our services to stay ahead of industry trends. Join our esteemed roster of 
+          clients, and let's embark on a journey of mutual growth, innovation, and lasting success in the ever-evolving landscape of IT 
+          solutions.</p> <br>
+        <img src="img/client-cont.jpg" alt="Card Image">
+
+  </div>
+</div>
+</section>
+
+<!-- <section class="client-cont" style="background-image: url(img/clients.jpg);"> 
+  <div> <p> <h5 style="text-align: center; font-size: 23px;margin-bottom: 6px; color: #ac0c30;">Our Clients</h5></p></div>
+  <div class="clients-gallery">
+     <img src="img/clients/1.png" alt="Image 1">  
+     <img src="img/clients/2.png" alt="Image 1">  
+     <img src="img/clients/3.png" alt="Image 1">  
+     <img src="img/clients/4.png" alt="Image 1">  
+     <img src="img/clients/5.png" alt="Image 1">  
+     <img src="img/clients/6.png" alt="Image 1">  
+     <img src="img/clients/7.png" alt="Image 1">  
+     <img src="img/clients/8.png" alt="Image 1">  
+     <img src="img/clients/9.png" alt="Image 1">  
+     <img src="img/clients/10.png" alt="Image 1">  
+     <img src="img/clients/11.png" alt="Image 1">  
+     <img src="img/clients/12.png" alt="Image 1">  
+     Add more images as needed 
+  </div>
+  </section> -->
+
+  <!-- Clients-option-2 -->
+  <section class="client-cont" style="background-image: url(img/clients.jpg);"> 
+    <div> <br><p> <h5 style="text-align: center; font-size: 23px;margin-bottom: 6px; color: #ac0c30; margin: top 6%;;">Our Clients</h5></p></div> <br>
+    <div class="client-container">
+      <div class="client-content">
+          <!-- Each slide with an image -->
+          <div class="slide"><img src="img/clients/1.png" alt="Image 1"></div>
+          <div class="slide"><img src="img/clients/2.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/3.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/4.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/5.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/6.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/7.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/8.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/9.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/10.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/11.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/12.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/1.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/6.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/7.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/8.png" alt="Image 2"></div>
+          <div class="slide"><img src="img/clients/9.png" alt="Image 2"></div>
+         
+      </div>
+  </div>
+    </section>
+  <!-- clients-js -->
+    <script>
+      // JavaScript for automatic sliding
+      const sliderContent = document.querySelector('.client-content');
+      let slideIndex = 0;
+  
+      function showNextSlide() {
+          slideIndex = (slideIndex + 1) % 10;
+          updateSlider();
+      }
+  
+      function updateSlider() {
+          const translateValue = -slideIndex * 100 + '%';
+          sliderContent.style.transform = 'translateX(' + translateValue + ')';
+      }
+  
+      // Set an interval for automatic sliding (change slide every 3 seconds)
+      setInterval(showNextSlide, 4000);
+  </script>
+  
+<!-- Gallery -->
+
+  <!-- <section class="gallery" id="gallery"></section>
+      <div class="text">
+        <br>
+        <br><br><br>
+    <p><h5>Gallery</h5>
+    <p><h2>Transforming Challenges into Solutions</h2></p>
+    <div class="gallery-container">
+      <img src="img/gallery/3.png" >
+      <img src="img/gallery/5.jpg" >
+      <img src="img/gallery/6.jpg" >
+      <img src="img/gallery/7.jpg" >
+      <img src="img/gallery/1.jpg" >
+      <img src="img/gallery/2.jpg" >
+      <img src="img/gallery/3.jpg" >
+      <img src="img/gallery/8.jpg" >
+      <img src="img/gallery/9.jpg" >
+      <img src="img/gallery/10.jpg" >
+      <img src="img/gallery/11.png" >
+      <img src="img/gallery/12.jpg" >
+
+    </div>
+  </div> -->
+</section>
+<!-- <section class="gallery-1" id="gallery-1"></section>
+<div class="text">
+  <br>
+  <br><br><br>
+<p><h5>Gallery</h5>
+<p><h2>Transforming Challenges into Solutions</h2></p>
+<div class="gallery-container-1">
+<img src="img/gallery/3.png" >
+<img src="img/gallery/5.jpg" >
+<img src="img/gallery/6.jpg" >
+<img src="img/gallery/7.jpg" >
+<img src="img/gallery/1.jpg" >
+<img src="img/gallery/2.jpg" >
+<img src="img/gallery/3.jpg" >
+<img src="img/gallery/8.jpg" >
+<img src="img/gallery/9.jpg" >
+<img src="img/gallery/10.jpg" >
+<img src="img/gallery/11.png" >
+<img src="img/gallery/12.jpg" >
+
+</div>
+</div>
+</section> -->
+<section class="gallery" id="gallery"></section>
+  <div class="text">
+    <br>
+    <br><br><br>
+  <p><h5>Gallery</h5>
+  <p><h2>Transforming Challenges into Solutions</h2></p>
+  <div class="gal-row" data-aos="zoom-in" data-aos-duration="500">
+    <div class="gal-column">
+      <img src="img/gallery/1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow gal-cursor gal-img">
+    </div>
+    <div class="gal-column">
+      <img src="img/gallery/2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow gal-cursor gal-img">
+    </div>
+    <div class="gal-column">
+      <img src="img/gallery/3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow gal-cursor gal-img">
+    </div>
+    <div class="gal-column">
+      <img src="img/gallery/3.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow gal-cursor gal-img">
+    </div>
+     <div class="gal-column">
+      <img src="img/gallery/5.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow gal-cursor gal-img">
+    </div>
+    <div class="gal-column">
+      <img src="img/gallery/6.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow gal-cursor gal-img">
+    </div>
+    <div class="gal-column">
+      <img src="img/gallery/7.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow gal-cursor gal-img">
+    </div>
+    <div class="gal-column">
+      <img src="img/gallery/8.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow gal-cursor gal-img">
+    </div>
+    <div class="gal-column">
+      <img src="img/gallery/9.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow gal-cursor gal-img">
+    </div>
+    <div class="gal-column">
+      <img src="img/gallery/10.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow gal-cursor gal-img">
+    </div>
+    <div class="gal-column">
+      <img src="img/gallery/11.png" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow gal-cursor gal-img">
+    </div>
+    <div class="gal-column">
+      <img src="img/gallery/12.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow gal-cursor gal-img">
+    </div>
+  
+  
+  <div id="myModal" class="gal-modal">
+    <span class="gal-close gal-cursor" onclick="closeModal()">&times;</span>
+    <div class="gal-modal-content">
+  
+      <div class="gal-mySlides">
+        <div class="gal-numbertext">1 / 12</div>
+        <img src="img/gallery/1.jpg" style="width:100%">
+      </div>
+  
+      <div class="gal-mySlides">
+        <div class="gal-numbertext">2 / 12</div>
+        <img src="img/gallery/2.jpg" style="width:100%">
+      </div>
+  
+      <div class="gal-mySlides">
+        <div class="gal-numbertext">3 / 12</div>
+        <img src="img/gallery/3.jpg" style="width:100%">
+      </div>
+      
+      <div class="gal-mySlides">
+        <div class="gal-numbertext">4 / 12</div>
+        <img src="img/gallery/3.png" style="width:100%">
+      </div>
+       <div class="gal-mySlides">
+        <div class="gal-numbertext">5 / 12</div>
+        <img src="img/gallery/5.jpg" style="width:100%">
+      </div>
+      <div class="gal-mySlides">
+        <div class="gal-numbertext">6 / 12</div>
+        <img src="img/gallery/6.jpg" style="width:100%">
+      </div>
+      <div class="gal-mySlides">
+        <div class="gal-numbertext">7 / 12</div>
+        <img src="img/gallery/7.jpg" style="width:100%">
+      </div> 
+      <div class="gal-mySlides">
+        <div class="gal-numbertext">8 / 12</div>
+        <img src="img/gallery/8.jpg" style="width:100%">
+      </div>
+      <div class="gal-mySlides">
+        <div class="gal-numbertext">9 / 12</div>
+        <img src="img/gallery/9.jpg" style="width:100%">
+      </div>
+      <div class="gal-mySlides">
+        <div class="gal-numbertext">10 / 12</div>
+        <img src="img/gallery/10.jpg" style="width:100%">
+      </div>
+      <div class="gal-mySlides">
+        <div class="gal-numbertext">11 / 12</div>
+        <img src="img/gallery/11.png" style="width:100%">
+      </div>
+      <div class="gal-mySlides">
+        <div class="gal-numbertext">12 / 12</div>
+        <img src="img/gallery/12.jpg" style="width:100%">
+      </div>
+  
+      <a class="gal-prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="gal-next" onclick="plusSlides(1)">&#10095;</a>
+  
+      <div class="gal-caption-container">
+        <p id="caption"></p>
+      </div>
+  
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+
+<!-- Testimonial -->
+<section class="testimonial" id="testimonial">
+      <div class="text">
+        <br>
+        <br><br><br>
+    <p><h5>Testimonial</h5></p>
+    <p><h2>Empowering Success Stories: Real Clients, Real Results – Discover the Impact of Our IT Solutions.</h2></p>
+    <div class="testimonial-container" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">
+      <div class="testimonial-wrapper">
+        <div class="testimonial">
+            <img src="img/testimony/shruti.png" alt="Testimonial Author 2">
+            <div class="testimonial-content">
+                <p class="testimonial-author">Shruti Agrawal</p>
+                <p class="testimonial-text">"This is the first time attending a class, so the experience was unique to me. I wasn't quite sure what to expect, but I am very pleased with this format. The teacher was very knowledgeable, worked at a good pace, and most importantly, was very good at communicating with all the attendees and ensuring questions were answered. I got a job and trust me because I attended this class and gained so much knowledge its helping me a lot n alot. I would definitely recommend to others and I hope to have the opportunity to attend more training classes in future."
+                  </p>
+            </div>
+        </div>
+        <div class="testimonial">
+          <img src="img/testimony/omkar.png" alt="Testimonial Author 2">
+          <div class="testimonial-content">
+              <p class="testimonial-author">Omkar Deshpande</p>
+              <p class="testimonial-text">"I was novice to Languages but Milind helped me develop taste towards it.  Found the coaching to be very simple and he is very down to earth. Learnt full stack professional training on Java which enhanced learning experience about this language. We were provided with real time projects and never found excuse for class closing down even during lock down."
+                </p>
+          </div>
+      </div>
+      <div class="testimonial">
+        <img src="img/testimony/sharadha.png" alt="Testimonial Author 2">
+        <div class="testimonial-content">
+            <p class="testimonial-author">Shradha Agrawal</p>
+            <p class="testimonial-text">"I've never completed a course like this before and I cannot express how great the Teacher was and the overall content of the material. I was very much satisfied and this helped me a lot, gained lots of knowledge and this knowledge helping me in my career a lot.  I would definitely recommend this to my friends. I will be looking into taking more of these classes in the near future. Thank you!"
+              </p>
+        </div>
+    </div>
+        <div class="testimonial">
+          <img src="img/testimony/sankyukta.png" alt="Testimonial Author 6">
+          <div class="testimonial-content">
+              <p class="testimonial-author">Sankyukta Lakkam</p>
+              <p class="testimonial-text">"I have done internship in
+                mass technologies and had the best experience sir gave us much more knowledge about programming and the topics.
+                 Sir explains each and every doubt in coding. Thank you so much sir for your support 😊"</p>
+          </div>
+      </div>
+        <div class="testimonial">
+          <img src="img/testimony/lbtavatar.jpg" alt="Testimonial Author 2">
+          <div class="testimonial-content">
+              <p class="testimonial-author">Kapil Tiwari</p>
+              <p class="testimonial-text">"In short time duration I have learnt web development in here. I am a first year engineering student . For me it's a good experience to working here, also here  good faculty members  all of them  are doing great work . I am very thankful to them to give this opportunity to me"
+                </p>
+          </div>
+      </div>
+ 
+<div class="testimonial">
+  <img src="img/testimony/lbtavatar.jpg" alt="Testimonial Author 2">
+  <div class="testimonial-content">
+      <p class="testimonial-author">Vivekanand Shah</p>
+      <p class="testimonial-text">"It was wonderful experience to be an intern and learning new technologies like angular, typescript and basics of web development.
+        Wish to learn something new from Millind sir next time."
+        </p>
+  </div>
+</div>
+<div class="testimonial">
+  <img src="img/testimony/manali.jpg" alt="Testimonial Author 1">
+  <div class="testimonial-content">
+      <p class="testimonial-author">Manali Khirsagar</p>
+      <p class="testimonial-text">"Textbooks can prescribe writing basics, but there’s no replacement for a teacher that can say, 
+        ‘This is what I do and it led to these results.’
+        I choose to learn from the best. When it comes to learning how to write better programs, Mr. Milind Ankeleshwar is that person—he’s 
+        skillful, humble, passionate, teaching from personal experience, and excited to show you the way. What 
+        he teaches you will help you improve your skills, not just during the course, but beyond."</p>
+  </div>
+</div>
+<div class="testimonial">
+  <img src="img/testimony/lbtavatar.jpg" alt="Testimonial Author 2">
+  <div class="testimonial-content">
+      <p class="testimonial-author">Kalpeksha Kalbhor</p>
+      <p class="testimonial-text">"I have done internship in mass technologies and it was great experience..sir gave us more knowledge about programming as well as topics under our internship and solve each and every query and explain all the concepts clearly..thank you sir for your support"
+        </p>
+  </div>
+</div>
+         
+
+          <div class="testimonial">
+              <img src="img/testimony/juhi.jpg" alt="Testimonial Author 2">
+              <div class="testimonial-content">
+                  <p class="testimonial-author">Juhi Sindhi</p>
+                  <p class="testimonial-text">"Selecting a good institute is always a tough task. Many institutes fake about 
+                    their staff skills, education and experience. This institute has 10 years’ experience in IT industry and 
+                    complete many projects till now.The classes are more interactive and we can easily learn the concept begin
+                     the program code.The atmosphere is quite friendly."
+                    </p>
+              </div>
+          </div>
+          <div class="testimonial">
+            <img src="img/testimony/snehal.jpg" alt="Testimonial Author 3">
+            <div class="testimonial-content">
+                <p class="testimonial-author">Snehal Gaikwad</p>
+                <p class="testimonial-text">"It's been a good experience after joining this class. I haven't just 
+                  learned the things related to maa topic but also the things which are used further in my life.
+                  The main motive to join the class was to have a interactive session which would clear all my 
+                  topics which was perfectly done by Milind sir. As he is having industrial experience , he shared many of those
+                   and guided us with many new evolving technologies..."</p>
+            </div>
+        </div>
+        <div class="testimonial">
+          <img src="img/testimony/mandar.jpg" alt="Testimonial Author 4">
+          <div class="testimonial-content">
+              <p class="testimonial-author">Mandar Dunde</p>
+              <p class="testimonial-text">"Milind Sir's teaching and way of explaining the program is
+                excellent and relate it with real life example makes us understand concepts easily."</p>
+          </div>
+      </div>
+      <div class="testimonial">
+        <img src="img/testimony/varsha.jpg" alt="Testimonial Author 5">
+        <div class="testimonial-content">
+            <p class="testimonial-author">Varsha More</p>
+            <p class="testimonial-text">"It is really very good learning experience at Mass Technologies. Every 
+              basic concept was cleared with proper examples and assignments. It has complete practical approach to make every
+               concept clear. Milind Sir explained &nbsp; everything with very friendly and energetic way. And also the staff members
+                at Mass Technologies are well supportive. Thanks Mass Technologies for such a great experience"</p>
+        </div>
+    </div>
+   
+  <div class="testimonial">
+    <img src="img/testimony/lbtavatar.jpg" alt="Testimonial Author 7">
+    <div class="testimonial-content">
+        <p class="testimonial-author">Kalpeksha Surve</p>
+        <p class="testimonial-text">"I have done internship in mass technologies and it was great experience..sir gave us 
+          more knowledge about &nbsp; programming as well as topics under our internship and 
+          solve each and every query and explain all the concepts clearly..thank you sir
+           for your support"</p>
+    </div>
+</div>
+
+      </div>
+
+      <div class="slider-navigation">
+          <span class="prev-test" onclick="changeSlides(-1)">&#10094;</span>
+          <span class="next-test" onclick="changeSlides(1)">&#10095;</span>
+      </div>
+  </div>
+    </div>
+  </section>
+    
+  <!-- Image -->
+  <!-- <section class="contact-img" style="background-image: url(img/contact.jpg);"> </section> -->
+
+  <!-- Contact Us -->
+  <section class="contact" id="contact"> 
+    <div class="text">
+      <br>
+      <br><br><br>
+  <p><h5>Contact Us</h5>
+  <p><h2>Connecting Solutions, Empowering Futures: Reach Out to Us for Your IT Needs</h2></p>
+    <div class="background">
+      <div class="container" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="50">
+        <div class="screen">
+          <div class="screen-body">
+            <div class="screen-body-item left">
+              <div class="app-title">
+                <span>GET IN TOUCH</span>
+              </div>
+              <div class="app-contact"><i class="fa fa-map-marker" style="font-size:12px;color: #ac0c30;"></i><span style="color: rgb(82, 81, 81); font-size: 15px;font-weight:400;"> 7E, 4th Floor, Noble Manchester,Opp.Navale Hospital, Narhe,Pune:411041 </span></div>
+              <div class="app-contact"><i class="fas fa-mail-bulk" style="font-size:12px;color: #ac0c30;">&nbsp;&nbsp;</i><a href="mailto:support@masstechnologies.com" style="color:rgb(82, 81, 81); font-size: 14px;font-weight:400;">support@masstechnologies.co.in</a> </div>
+              <div class="app-contact"><i class="fas fa-phone-alt" style="font-size:14px;color: #ac0c30;"></i>&nbsp;&nbsp;<a href="tel:+919175023392" style="color:rgb(82, 81, 81); font-size: 14px;font-weight:400;">+91 9175023392</a></div>
+            </div>
+            <div class="screen-body-item">
+              <div class="app-form">
+                <div class="app-form-group">
+                  <input class="app-form-control" placeholder="NAME" >
+                </div>
+                <div class="app-form-group">
+                  <input class="app-form-control" placeholder="EMAIL">
+                </div>
+                <div class="app-form-group">
+                  <input class="app-form-control" placeholder="CONTACT NO">
+                </div>
+                <div class="app-form-group message">
+                  <input class="app-form-control" placeholder="MESSAGE">
+                </div>
+                <div class="app-form-group buttons">
+                  <button class="app-form-button">SEND</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+</section>
+
+<!-- Footer -->
+
+<section class="footer" id="footer">
+  <footer style="background-image: url(img/footer-bg.jpg);">
+    <div class="footer-section">
+        <img src="img/logo.png" alt="Company Logo" style="max-width: 100%;">
+        <div class= "social-links">
+            <a href="https://www.facebook.com/masstechnologiespune/" target="_blank"> <i class="fab fa-facebook"></i></a> &nbsp; &nbsp;
+            <a href="https://www.linkedin.com/company/mass-technologies-pune/?originalSubdomain=in" target="_blank"><i class="fab fa-linkedin"></i></a>  &nbsp; &nbsp;
+            <a href="https://api.whatsapp.com/send/?phone=%2B919175023392&text&type=phone_number&app_absent=0" target="_blank"><i class="fab fa-whatsapp"></i></a>
+           </div>
+          </div>
+    <div class="footer-section">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-content" >
+            <li><a href="#home">&nbsp;Home</a></li>
+            <li><a href="#about">&nbsp;About Us</a></li>
+            <li><a href="#service">&nbsp;Services</a></li>
+            <li><a href="#client">&nbsp;Clients</a></li>
+            <li><a href="#course">&nbsp;Courses</a></li>
+            <li><a href="#gallery">&nbsp;Gallery</a></li>
+            <li><a href="#contact">&nbsp;Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section">
+        <h3 class="footer-heading">Services</h3>
+        <ul class="footer-content">
+            <li><a href="#">&nbsp;Software Development </a></li>
+            <li><a href="#">&nbsp;Training and Education </a></li>
+            <li><a href="#">&nbsp;BE/ME/PHD Projects </a></li>
+            <li><a href="#">&nbsp;Web Development </a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section">
+        <h3 class="footer-heading">Address</h3>
+        <ul class="footer-content-a" style="list-style: none;">
+             <a href="https://www.google.com/maps/place/Mass+Technologies/@18.4566638,73.8220546,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc29538c90f6181:0xb234c351b44f7227!8m2!3d18.4566638!4d73.8246295!16s%2Fg%2F11c2y79n7y?entry=ttu"><li> 7E, 4thFloor, Noble Manchester</li>
+            <li>Pune,Maharashtra India.411041</li> </a>
+            <li><i class="fas fa-mail-bulk"></i> &nbsp;<a href="mailto:support@masstechnologies.com">support@masstechnologies.co.in </a></li>
+            <li><i class="fas fa-phone-alt">: </i>&nbsp;<a href="tel:919175023392">+91 9175023392 </a></li>
+        </ul>
+    </div>
+
+    
+
+</footer>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- chabot -->
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+
+
+<script>
+function sendEmail(){
+  console.log(document.getElementById("numb"));
+  Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "clownpanda93@gmail.com",
+    Password : "2120C71F93C8C19250849E33FC92114E6768",
+    To : 'clownpanda531@gmail.com',
+    From : 'clownpanda93@gmail.com',
+    ReplyTo : document.getElementById("email").value,
+    Subject : "New Contact Form Enquiry",
+    Body : "Name: " + document.getElementById("name").value + "<br> Email: " + document.getElementById("email").value 
+         + "<br> Phone no: " + document.getElementById("numb").value + "<br> Address: " + document.getElementById("address").value
+         + "<br> Course: " + document.getElementById("course").value  
+}).then(
+  message => alert(message)
+);
+
+}
+</script>
+
+
+<script>
+  const chatbotToggler = document.querySelector(".chatbot-toggler");
+const closeBtn = document.querySelector(".close-btn");
+const chatbox = document.querySelector(".chatbox");
+const chatform=document.querySelector(".chat-form")
+const formBtn=document.querySelector(".form-btn")
+const chatInput = document.querySelector(".chat-input textarea");
+const sendChatBtn = document.querySelector(".chat-input span");
+
+
+
+
+let userMessage = null; // Variable to store user's message
+const API_KEY = "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"; // Paste your API key here
+const inputInitHeight = chatInput.scrollHeight;
+
+const createChatLi = (message, className) => {
+  // Create a chat <li> element with passed message and className
+  const chatLi = document.createElement("li");
+  chatLi.classList.add("chat", `${className}`);
+  let chatContent = className === "outgoing" ? `<p></p>` : `<span class="fas fa-robot"></span><p></p>`;
+  chatLi.innerHTML = chatContent;
+  chatLi.querySelector("p").textContent = message;
+  return chatLi; // return chat <li> element
+}
+
+const generateResponse = (chatElement) => {
+  const API_URL = "https://api.openai.com/v1/chat/completions";
+  const messageElement = chatElement.querySelector("p");
+
+  // Define the properties and message for the API request
+  const requestOptions = {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${API_KEY}`
+      },
+      body: JSON.stringify({
+          model: "gpt-3.5-turbo",
+          messages: [{role: "user", content: userMessage}],
+      })
+  }
+
+  // Send POST request to API, get response and set the reponse as paragraph text
+  fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
+      messageElement.textContent = data.choices[0].message.content.trim();
+  }).catch(() => {
+      messageElement.classList.add("error");
+      messageElement.textContent = "Oops! Something went wrong. Please try again.";
+  }).finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
+}
+
+const handleChat = () => {
+  userMessage = chatInput.value.trim(); // Get user entered message and remove extra whitespace
+  if(!userMessage) return;
+
+  // Clear the input textarea and set its height to default
+  chatInput.value = "";
+  chatInput.style.height = `${inputInitHeight}px`;
+
+  // Append the user's message to the chatbox
+  chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+  chatbox.scrollTo(0, chatbox.scrollHeight);
+  
+  setTimeout(() => {
+      // Display "Thinking..." message while waiting for the response
+      const incomingChatLi = createChatLi("Gathering info...", "incoming");
+      chatbox.appendChild(incomingChatLi);
+      chatbox.scrollTo(0, chatbox.scrollHeight);
+      generateResponse(incomingChatLi);
+  }, 600);
+}
+
+chatInput.addEventListener("input", () => {
+  // Adjust the height of the input textarea based on its content
+  chatInput.style.height = `${inputInitHeight}px`;
+  chatInput.style.height = `${chatInput.scrollHeight}px`;
+});
+
+chatInput.addEventListener("keydown", (e) => {
+  // If Enter key is pressed without Shift key and the window 
+  // width is greater than 800px, handle the chat
+  if(e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+      e.preventDefault();
+      handleChat();
+  }
+});
+
+
+
+
+formBtn.addEventListener("click" ,()=> chatform.classList.add("vanish"));
+formBtn.addEventListener("click" ,()=> chatbox.classList.remove("vanish"));
+
+sendChatBtn.addEventListener("click", handleChat);
+closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+</script>
+
+
+
+
+
+<!-- gallery -->
+<script>
+  function openModal() {
+    document.getElementById("myModal").style.display = "block";
+  }
+  
+  function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+  }
+  
+  var slideIndexxxx = 1;
+  showSlides(slideIndexxxx);
+  
+  function plusSlides(n) {
+    showSlides(slideIndexxxx += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndexxxx = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("gal-mySlides");
+    var dots = document.getElementsByClassName("gal-demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndexxxx = 1}
+    if (n < 1) {slideIndexxxx = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndexxxx-1].style.display = "block";
+    dots[slideIndexxxx-1].className += " active";
+    captionText.innerHTML = dots[slideIndexxxx-1].alt;
+  }
+</script>
+
+
+
+         <!-- testimonial script -->
+         <script>
+          let currentSlides = 0;
+  
+          function changeSlides(n) {
+              const testimonials = document.querySelector('.testimonial-wrapper');
+              const testimonialsCount = document.querySelectorAll('.testimonial').length;
+              
+              currentSlides = (currentSlides + n + testimonialsCount) % testimonialsCount;
+              
+              testimonials.style.transform = `translateX(-${currentSlides * 100}%)`;
+          }
+      </script>
+    <!-- Nav bar -->
+    
+
+    <script>
+      let nav = document.querySelector("nav");
+        window.onscroll = function() {
+          if(document.documentElement.scrollTop > 20){
+            nav.classList.add("sticky");
+          }else {
+            nav.classList.remove("sticky");
+          }
+        }
+      </script> 
+
+
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>
